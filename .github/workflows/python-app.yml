@@ -37,9 +37,12 @@ jobs:
         run: python3 -m venv myenv
       - name: Activate the virtual environment for macOS and Linux
         run: source myenv/bin/activate
-      - name: Install package to get requirement.txt
-        run: pip install SQLAlchemy
-        run: pip freeze > requirements.txt
+      - name: Activate the virtual environment and install packages
+        run: |
+          source myenv/bin/activate
+          pip install SQLAlchemy
+          pip freeze > requirements.txt
+        shell: bash
       # - name: Activate the virtual environment for windows
       #   run: myenv\Scripts\activate
       
