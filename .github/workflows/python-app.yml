@@ -47,14 +47,14 @@ jobs:
       # - name: Activate the virtual environment for windows
       #   run: myenv\Scripts\activate
           # Add, commit, and push the requirements.txt to the repository
-      - name: Commit and push requirements.txt
-        run: |
-          git config --local user.name "github-actions[bot]"
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git add requirements.txt
-          git commit -m "Add requirements.txt from GitHub Actions"
-          git push origin master
-        env:
-          # Use GitHub token to authenticate the push
-          GITHUB_TOKEN: ${{ secrets.PUSHPAT }}
+      # - name: Commit and push requirements.txt
+      #   run: |
+      #     git config --local user.name "github-actions[bot]"
+      #     git config --local user.email "github-actions[bot]@users.noreply.github.com"
+      #     git add requirements.txt
+      #     git commit -m "Add requirements.txt from GitHub Actions"
+      #     git push origin master
+      #   env:
+      #     # Use GitHub token to authenticate the push
+      #     GITHUB_TOKEN: ${{ secrets.PUSHPAT }}
       
