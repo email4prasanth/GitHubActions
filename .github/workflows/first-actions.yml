@@ -5,7 +5,10 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    if: contains(github.event.head_commit.message, '[first-actions]')
+    steps: 
+    - name: Run this job if it is first.yml 
+      run: echo "Running first-action.yml"
     strategy:
       matrix:
         python-version: [3.8, 3.9]
