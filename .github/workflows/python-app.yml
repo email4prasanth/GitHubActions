@@ -41,6 +41,7 @@ jobs:
         run: |
           source myenv/bin/activate
           pip install SQLAlchemy
+          pip install pandas
           pip freeze > requirements.txt
         shell: bash
       # - name: Activate the virtual environment for windows
