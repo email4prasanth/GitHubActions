@@ -1,31 +1,28 @@
-name: My First GitHub Actions
+# name: My First GitHub Actions
 
-on: [push]
+# on: [push]
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    if: contains(github.event.head_commit.message, '[first-actions]')
-    steps: 
-    - name: Run this job if it is first.yml 
-      run: echo "Running first-action.yml"
-    strategy:
-      matrix:
-        python-version: [3.8, 3.9]
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest  
 
-    steps:
-    - uses: actions/checkout@v3
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: ${{ matrix.python-version }}
+#     strategy:
+#       matrix:
+#         python-version: [3.8, 3.9]
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install pytest
+#     steps:
+#     - uses: actions/checkout@v3
+#     - name: Set up Python
+#       uses: actions/setup-python@v2
+#       with:
+#         python-version: ${{ matrix.python-version }}
 
-    - name: Run tests
-      run: |
-        cd src
-        python -m pytest addition.py
+#     - name: Install dependencies
+#       run: |
+#         python -m pip install --upgrade pip
+#         pip install pytest
+
+#     - name: Run tests
+#       run: |
+#         cd src
+#         python -m pytest addition.py

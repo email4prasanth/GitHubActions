@@ -8,10 +8,6 @@ jobs:
   build:
 
     runs-on: ${{matrix.os}}
-    if: contains(github.event.head_commit.message, '[python-app]')
-    steps: 
-    - name: Run this job if it is python-app.yml 
-      run: echo "Running python-app.yml"
     strategy:
       matrix:
         # os: [ubuntu-latest, macos-latest, windows-latest]
