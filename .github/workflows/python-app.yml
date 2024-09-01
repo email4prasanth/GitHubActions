@@ -56,5 +56,6 @@ jobs:
           git push origin master
         env:
           # Use GitHub token to authenticate the push
-          GITHUB_TOKEN: ${{ secrets.PUSHPAT }}
+          PUSHPAT: ${{ secrets.PUSHPAT }}
+        shell: bash
       
