@@ -1,0 +1,1 @@
+- **git log --oneline** - displays the first seven characters of the commit's SHA-1 hash and the commit message on a single line

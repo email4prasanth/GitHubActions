@@ -1,0 +1,125 @@
+[33mcommit c4c4a50a5a032580c1cd7cdc82e39a554919d518[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: email4prasanth <email4prasanth@gmail.com>
+Date:   Sat Aug 31 18:55:58 2024 +0530
+
+    removed cred
+
+[33mcommit c4aecde5d33e975cc8a25ea731b72299090cddb6[m
+Author: email4prasanth <email4prasanth@gmail.com>
+Date:   Sat Aug 31 18:26:09 2024 +0530
+
+    Added env to get requirement.txt
+
+[33mcommit 955434e8c75369cad926b2b982f344ea8a812ff3[m
+Author: email4prasanth <email4prasanth@gmail.com>
+Date:   Sat Aug 31 18:22:41 2024 +0530
+
+    Added env to get requirement.txt
+
+[33mcommit 30482180c90057f586a82d71920837f8b3aa0125[m
+Author: email4prasanth <email4prasanth@gmail.com>
+Date:   Sat Aug 31 18:21:59 2024 +0530
+
+    Added env to get requirement.txt
+
+[33mcommit 09f3ed00158a54867fb21d374f099af59ca5c13b[m
+Author: email4prasanth <email4prasanth@gmail.com>
+Date:   Sat Aug 31 18:20:57 2024 +0530
+
+    Added env to get requirement.txt
+
+[33mcommit d855cb1e971d08a91235014a6a70b4fbefbd35eb[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: email4prasanth <email4prasanth@gmail.com>
+Date:   Sat Aug 31 18:08:58 2024 +0530
+
+    Added env to get requirement.txt
+
+[33mcommit 62c0a63381fa9884d76f4403e97ee476c5c3b814[m
+Author: email4prasanth <email4prasanth@gmail.com>
+Date:   Sat Aug 31 17:52:52 2024 +0530
+
+    Added env to get requirement.txt
+
+[33mcommit ced8b493c11850968907b46985f7c383eb6957b8[m
+Author: email4prasanth <email4prasanth@gmail.com>
+Date:   Sat Aug 31 17:39:36 2024 +0530
+
+    include bash to get requirement.txt and pands
+
+[33mcommit a9fabfbc8ecf34620beffaf7d9732fafcd98a820[m
+Author: email4prasanth <email4prasanth@gmail.com>
+Date:   Sat Aug 31 17:37:50 2024 +0530
+
+    include bash to get requirement.txt
+
+[33mcommit 7aff9da0e49e15c47acde8371b2592b3c8ca3a32[m
+Author: email4prasanth <email4prasanth@gmail.com>
+Date:   Sat Aug 31 17:35:15 2024 +0530
+
+    create venv and requirment.txt
+
+[33mcommit 7c2650a4f8c38c136560053efbe8bcbaaaca9716[m
+Author: email4prasanth <email4prasanth@gmail.com>
+Date:   Sat Aug 31 17:34:04 2024 +0530
+
+    create venv and requirment.txt
+
+[33mcommit 35813756cd8c3b20e8617f4685559a3d7763d9a5[m
+Author: email4prasanth <email4prasanth@gmail.com>
+Date:   Sat Aug 31 17:31:53 2024 +0530
+
+    create venv
+
+[33mcommit cf0729428d8db66d7f46568b69db5f4d156c7ae4[m
+Author: email4prasanth <email4prasanth@gmail.com>
+Date:   Sat Aug 31 17:25:42 2024 +0530
+
+    chaged python to python3 and used ubuntu os
+
+[33mcommit de224391f64a65a31ef909b823f8851ab5c9a79d[m
+Author: email4prasanth <email4prasanth@gmail.com>
+Date:   Sat Aug 31 17:23:39 2024 +0530
+
+    Update code [python-app]
+
+[33mcommit 403533a36c7971642ecd18d313a702a397002d20[m
+Author: email4prasanth <email4prasanth@gmail.com>
+Date:   Sat Aug 31 17:10:13 2024 +0530
+
+    chaged python to python3 and used ubuntu os
+
+[33mcommit 70e1953409e0037702992de9227caf08ab0125f9[m
+Author: email4prasanth <email4prasanth@gmail.com>
+Date:   Sat Aug 31 16:57:36 2024 +0530
+
+    excluded 3.10 and windows os
+
+[33mcommit 243105a63a06d7f8278207eceebc6a7673926c67[m
+Author: email4prasanth <94213790+email4prasanth@users.noreply.github.com>
+Date:   Sat Aug 31 16:48:33 2024 +0530
+
+    python-app.yml
+
+[33mcommit b821fd39f85b52c789f58aeb174e9b1f0139a26b[m
+Author: email4prasanth <94213790+email4prasanth@users.noreply.github.com>
+Date:   Sat Aug 31 16:39:40 2024 +0530
+
+    Create python-app.yml
+
+[33mcommit f2ca2cf488bfa2b8e8e90a65822a96de60b92570[m
+Author: email4prasanth <94213790+email4prasanth@users.noreply.github.com>
+Date:   Sat Aug 31 16:27:27 2024 +0530
+
+    Update addition.py
+
+[33mcommit 15d57b68c8431b6cbbdfc2eeb0c573a8b3356367[m
+Author: email4prasanth <94213790+email4prasanth@users.noreply.github.com>
+Date:   Sat Aug 31 16:25:22 2024 +0530
+
+    Update addition.py
+
+[33mcommit 60943a5c0f04344abab6f20542dea5eeb7c18b69[m
+Author: email4prasanth <email4prasanth@gmail.com>
+Date:   Sat Aug 31 16:20:57 2024 +0530
+
+    added github action base files
