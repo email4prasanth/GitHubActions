@@ -55,6 +55,6 @@ jobs:
           git commit -m "Add requirements.txt from GitHub Actions"
           git push origin master
         env:
-          # Use GitHub token to authenticate the push
+          # Use GitHub token to authenticate the push and
           GITHUB_TOKEN: ${{ secrets.PUSHPAT }}
       
