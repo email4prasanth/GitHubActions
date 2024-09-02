@@ -32,7 +32,15 @@ jobs:
       - name: Display Python version
         run: python -c "import sys; print(sys.version)"
       - name: Install dependency
-        run: python3 -m pip install --upgrade pip
+        run: |
+          python3 -m pip install --upgrade pip
+          pip install pytest
+
+      - name: Run test
+        run: |
+          cd src
+          python3 -m p pytest addition.py
+          cd ..
       - name: Create a virtual environment
         run: python3 -m venv myenv
       - name: Activate the virtual environment and install packages
@@ -42,16 +50,11 @@ jobs:
           pip install SQLAlchemy
           pip install pandas
           pip install matplotlib 
-          pip install numpy
-          pip install pytest
+          pip install numpy   
           pip freeze > requirements.txt
           echo "requirement.txt"
         shell: bash
-      - name: Run test
-        run: |
-          cd src
-          python3 -m p pytest addition.py
-          cd ..
+
       - name: Commit and push requirements.txt and add myenv/ to .gitignore
         run: |
           git config --local user.name "github-actions[bot]"
