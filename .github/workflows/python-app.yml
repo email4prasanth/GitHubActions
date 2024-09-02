@@ -50,19 +50,25 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           echo "Git configuration set successfully"
 
-          # Only add requirements.txt to the commit
-          git add requirements.txt
-          echo "git add successful for requirements.txt"
-          git add .gitignore
-          git commit -m "Update .gitignore to exclude virtual environment files"
-
-          # Check if there are any changes to commit
-          if git diff-index --quiet HEAD --; then
-            echo "No changes to commit"
+          # Check if .gitignore has changes
+          if ! git diff --quiet .gitignore; then
+            git add .gitignore
+            git commit -m "Update .gitignore to exclude virtual environment files"
+            echo "Updated .gitignore and committed"
           else
-            git commit -m "Add requirements.txt from GitHub Actions"
-            echo "git commit successful"
+            echo ".gitignore has no changes"
           fi
+           
+
+          # Check if requirements.txt has changes
+          if ! git diff --quiet requirements.txt; then
+            git add requirements.txt
+            git commit -m "Update requirements.txt from GitHub Actions"
+            echo "Updated requirements.txt and committed"
+          else
+            echo "requirements.txt has no changes"
+          fi
+          
           ls 
           cat requirements.txt
       
