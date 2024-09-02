@@ -30,11 +30,14 @@ jobs:
           python-version: ${{ matrix.python-version }}
       # You can test your matrix by printing the current Python version
       - name: Display Python version
+        run: python -c "import sys; print(sys.version)"
+      - name: Install dependency
+        run: python3 -m pip install --upgrade pip
+      - name: Create a virtual environment
+        run: python3 -m venv myenv
+      - name: Activate the virtual environment and install packages
         run: |
-          python -c "import sys; print(sys.version)"
-          python3 -m pip install --upgrade pip
-          python3 -m venv myenv
-          # source myenv/bin/activate
+          source myenv/bin/activate
       - name: Commit and push requirements.txt
         run: |
           git config --local user.name "github-actions[bot]"
@@ -44,11 +47,10 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
           pip install SQLAlchemy
           pip install pandas
-          pip install requests
           pip freeze > requirements.txt
           echo "requirement.txt"
         shell: bash
-          # Check if the file exists before adding
+        # Check if the file exists before adding
           git add requirements.txt
           echo "git add sucessful to stagging"
           git commit -m "Add requirements.txt from GitHub Actions"
@@ -69,5 +71,6 @@ jobs:
         run: |
           git remote set-url origin https://email4prasanth:${{ secrets.PUSHPAT }}@github.com/email4prasanth/GitHubActions.git
           git push origin $BRANCH_NAME
+          git pull origin $BRANCH_NAME
 
 
