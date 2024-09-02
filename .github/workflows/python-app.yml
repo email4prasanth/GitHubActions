@@ -58,10 +58,21 @@ jobs:
           echo "git commit sucessful"
           ls 
           cat requirements.txt
-
+      # - name: Set up Git configuration
+      #   run: |
+      #     git config --global user.email "email4prasanth@example.com"
+      #     git config --global user.name "email4prasanth"
+      
       - name: Push changes to GitHub
-        run: |
-          git remote set-url origin https://github.com/email4prasanth/GitHubActions.git
-          git push origin master
         env:
           PUSHPAT: ${{ secrets.PUSHPAT }}
+        run: |
+          git remote set-url origin https://email4prasanth:${{ secrets.PUSHPAT }}@github.com/email4prasanth/GitHubActions.git
+          git push origin master
+
+      # - name: Push changes to GitHub
+      #   run: |
+      #     git remote set-url origin https://github.com/email4prasanth/GitHubActions.git
+      #     git push origin master
+      #   env:
+      #     PUSHPAT: ${{ secrets.PUSHPAT }}
