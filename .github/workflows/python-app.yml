@@ -41,6 +41,7 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
           pip install SQLAlchemy
           pip install pandas
+          pip install requests
           pip freeze > requirements.txt
           echo "requirement.txt"
         shell: bash
@@ -51,16 +52,8 @@ jobs:
           echo "Git configuration set successfully"
 
           # Ensure .gitignore is updated before committing
-          echo "BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)"
           ls
-          # Check if 'myenv/' is already in .gitignore; append if not present
-          if ! grep -Fxq "myenv/" .gitignore; then
-            echo "myenv/" >> .gitignore
-            echo "Appended 'myenv/' to .gitignore"
-          else
-            echo "'myenv/' is already in .gitignore"
-          fi
-
+          echo "myenv/" >> .gitignore
           git add requirements.txt .gitignore
           git commit -m "Update requirements.txt from GitHub Actions"
           echo "git commit sucessful"
