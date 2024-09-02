@@ -45,19 +45,19 @@ jobs:
           pip freeze > requirements.txt
           echo "requirement.txt"
         shell: bash
-      - name: Commit and push requirements.txt
+      - name: Commit and push requirements.txt and add myenv/ to .gitignore
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           echo "Git configuration set successfully"
 
           # Ensure .gitignore is updated before committing
+          echo "BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)"
           ls
           echo "myenv/" >> .gitignore
           git add requirements.txt .gitignore
           git commit -m "Update requirements.txt from GitHub Actions"
           echo "git commit sucessful"
-          
           cat requirements.txt
       
       - name: Push changes to GitHub
@@ -65,5 +65,6 @@ jobs:
           PUSHPAT: ${{ secrets.PUSHPAT }}
         run: |
           git remote set-url origin https://email4prasanth:${{ secrets.PUSHPAT }}@github.com/email4prasanth/GitHubActions.git
-          git push origin master
+          git push origin $BRANCH_NAME
+          git pull origin $BRANCH_NAME
 
