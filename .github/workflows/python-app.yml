@@ -29,13 +29,12 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       # You can test your matrix by printing the current Python version
-      - name: Display Python version and install dependecy 
-        run: |
-          python -c "import sys; print(sys.version)"
-          python3 -m pip install --upgrade pip
-      - name: Create a virtual environment and activate
-        run: |
-          python3 -m venv myenv
+      - name: Display Python version
+        run: python -c "import sys; print(sys.version)"
+      - name: Install dependency
+        run: python3 -m pip install --upgrade pip
+      - name: Create a virtual environment
+        run: python3 -m venv myenv
       - name: Activate the virtual environment and install packages
         run: |
           source myenv/bin/activate
@@ -44,19 +43,24 @@ jobs:
           pip install pandas
           pip freeze > requirements.txt
           echo "requirement.txt"
-        # shell: bash
+        shell: bash
       - name: Commit and push requirements.txt
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           echo "Git configuration set successfully"
-          git status
+
           git add requirements.txt
           echo "git add sucessful"
           git commit -m "Add requirements.txt from GitHub Actions"
           echo "git commit sucessful"
           ls 
-          cat requirements.txt      
+          cat requirements.txt
+      # - name: Set up Git configuration
+      #   run: |
+      #     git config --global user.email "email4prasanth@example.com"
+      #     git config --global user.name "email4prasanth"
+      
       - name: Push changes to GitHub
         env:
           PUSHPAT: ${{ secrets.PUSHPAT }}
