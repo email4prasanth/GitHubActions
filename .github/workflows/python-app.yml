@@ -53,6 +53,8 @@ jobs:
           # Only add requirements.txt to the commit
           git add requirements.txt
           echo "git add successful for requirements.txt"
+          git add .gitignore
+          git commit -m "Update .gitignore to exclude virtual environment files"
 
           # Check if there are any changes to commit
           if git diff-index --quiet HEAD --; then
