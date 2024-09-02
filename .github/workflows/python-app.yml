@@ -41,7 +41,6 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
           pip install SQLAlchemy
           pip install pandas
-          pip install requests
           pip freeze > requirements.txt
           echo "requirement.txt"
         shell: bash
@@ -61,7 +60,7 @@ jobs:
           else
             echo "'myenv/' is already in .gitignore"
           fi
-          
+
           git add requirements.txt .gitignore
           git commit -m "Update requirements.txt from GitHub Actions"
           echo "git commit sucessful"
