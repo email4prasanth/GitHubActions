@@ -61,7 +61,7 @@ jobs:
 
       - name: Push changes to GitHub
         run: |
-        git remote set-url origin https://github.com/email4prasanth/GitHubActions.git
-        git push orign master
+          git remote set-url origin https://github.com/email4prasanth/GitHubActions.git
+          git push orign master
         env:
           PUSHPAT: ${{ secrets.PUSHPAT }}
