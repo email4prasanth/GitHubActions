@@ -50,14 +50,13 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           echo "Git configuration set successfully"
 
-          # Only add requirements.txt to the commit
-          git add requirements.txt
-          echo "git add successful for requirements.txt"
+          # Ensure .gitignore is updated before committing
+          ls
           echo "myenv/" >> .gitignore
-          echo "Appended myenv/ to .gitignore"
-          git commit -m "Add requirements.txt from GitHub Actions"
+          git add requirements.txt .gitignore
+          git commit -m "Update requirements.txt from GitHub Actions"
           echo "git commit sucessful"
-          ls 
+          
           cat requirements.txt
       
       - name: Push changes to GitHub
@@ -66,5 +65,4 @@ jobs:
         run: |
           git remote set-url origin https://email4prasanth:${{ secrets.PUSHPAT }}@github.com/email4prasanth/GitHubActions.git
           git push origin master
-          git pull origin master
 
