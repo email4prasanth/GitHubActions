@@ -42,6 +42,7 @@ jobs:
           pip install SQLAlchemy
           pip install pandas
           pip freeze > requirements.txt
+          echo "requirement.txt"
         shell: bash
       # - name: Activate the virtual environment for windows
       #   run: myenv\Scripts\activate
@@ -50,7 +51,10 @@ jobs:
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          echo "git config sucessfull"
           git add requirements.txt
+          echo "git add sucessful"
           git commit -m "Add requirements.txt from GitHub Actions"
-          git push https://${{ secrets.PUSHPAT }}@github.com/email4prasanth/GitHubActions.git master  
-      
+          git push origin master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
