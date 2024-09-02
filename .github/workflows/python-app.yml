@@ -57,6 +57,7 @@ jobs:
           git commit -m "Add requirements.txt from GitHub Actions"
           echo "git commit sucessful"
           ls 
+          cat .\requirements.txt
           git push origin master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
