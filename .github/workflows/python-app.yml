@@ -42,7 +42,7 @@ jobs:
           pip install SQLAlchemy
           pip install pandas
           pip install requests
-          pip intall requests
+          pip install requests
           pip freeze > requirements.txt
           echo "requirement.txt"
         shell: bash
