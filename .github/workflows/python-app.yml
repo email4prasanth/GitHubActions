@@ -58,7 +58,10 @@ jobs:
           echo "git commit sucessful"
           ls 
           cat requirements.txt
-          pwd
-          git push origin master
+
+      - name: Push changes to GitHub
+        run: |
+        git remote set-url origin https://github.com/email4prasanth/GitHubActions.git
+        git push orign master
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PUSHPAT: ${{ secrets.PUSHPAT }}
