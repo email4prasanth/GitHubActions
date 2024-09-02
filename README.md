@@ -21,3 +21,11 @@ In conclusion, Jenkins is better suited for complex and large-scale automation t
 #### Related links
 - [link](https://docs.github.com/en/actions) open Use cases and examples, Build and test
 
+- changes made as follows in
+- Open GitHub Repository where the problem is occurring.
+- Go to Settings.
+- Go to Actions.
+- Go to General.
+- Scroll down to Workflow permissions.
+- Make sure the following settings are enabled and click "Save"
+
