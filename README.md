@@ -20,7 +20,7 @@ In conclusion, Jenkins is better suited for complex and large-scale automation t
 
 #### Related links
 - [link](https://docs.github.com/en/actions) open Use cases and examples, Build and test
-
+- [remote: Permission to git denied to github-actions[bot]](https://github.com/ad-m/github-push-action/issues/96)
 - changes made as follows in
 - Open GitHub Repository where the problem is occurring.
 - Go to Settings.

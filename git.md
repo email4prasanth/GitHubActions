@@ -1,4 +1,6 @@
 - **git log --oneline** - displays the first seven characters of the commit's SHA-1 hash and the commit message on a single line.
+- **git rev-parse --abbrev-ref HEAD** to get the current branch name
+
 - suppouse form master branch kishore branch and prasanth branch are created, kishore added ther code and pushed now the master branch is updated with kishore work, mean while prasanth is woking he also some code
 ```
 git stash
