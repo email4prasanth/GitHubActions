@@ -42,6 +42,7 @@ jobs:
           pip install SQLAlchemy
           pip install pandas
           pip install requests
+          pip intall requests
           pip freeze > requirements.txt
           echo "requirement.txt"
         shell: bash
@@ -53,7 +54,7 @@ jobs:
 
           # Ensure .gitignore is updated before committing
           ls
-          echo "myenv/" >> .gitignore
+          # echo "myenv/" >> .gitignore
           git add requirements.txt .gitignore
           git commit -m "Update requirements.txt from GitHub Actions"
           echo "git commit sucessful"
@@ -64,6 +65,8 @@ jobs:
           PUSHPAT: ${{ secrets.PUSHPAT }}
         run: |
           git remote set-url origin https://email4prasanth:${{ secrets.PUSHPAT }}@github.com/email4prasanth/GitHubActions.git
+          echo "push requested intiated"
           git push origin $BRANCH_NAME
+          echo " pull request intiated"
           git pull origin $BRANCH_NAME
 
