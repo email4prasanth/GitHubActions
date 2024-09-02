@@ -56,10 +56,6 @@ jobs:
           echo "git commit sucessful"
           ls 
           cat requirements.txt
-      # - name: Set up Git configuration
-      #   run: |
-      #     git config --global user.email "email4prasanth@example.com"
-      #     git config --global user.name "email4prasanth"
       
       - name: Push changes to GitHub
         env:
