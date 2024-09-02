@@ -34,7 +34,7 @@ jobs:
           python -c "import sys; print(sys.version)"
           python3 -m pip install --upgrade pip
           python3 -m venv myenv
-          source myenv/bin/activate
+          # source myenv/bin/activate
       - name: Commit and push requirements.txt
         run: |
           git config --local user.name "github-actions[bot]"
