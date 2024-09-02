@@ -50,6 +50,10 @@ jobs:
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           echo "Git configuration set successfully"
+        
+         # Append 'myenv/' to .gitignore
+          echo "myenv/" >> .gitignore
+          echo "Appended myenv/ to .gitignore"
 
           # Check if .gitignore has changes
           if ! git diff --quiet .gitignore; then
