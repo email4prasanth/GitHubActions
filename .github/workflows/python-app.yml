@@ -6,21 +6,24 @@ on: [push]
 
 jobs:
   build:
-
-    runs-on: ${{matrix.os}}
+    runs-on: self-hosted
     strategy:
       matrix:
-        # os: [ubuntu-latest, macos-latest, windows-latest]
-        os: ["ubuntu-latest"]
         python-version: ["3.12"]
-        # python-version: ["3.9", "3.10", "3.12"]
-        # Excluding a version 3.10 and OS
-        exclude:
-          - os: windows-latest
-            python-version: "3.10"
-          # - os: windows-latest
-          #   python-version: "3.12"
-        
+
+    # runs-on: ${{matrix.os}}
+    # strategy:
+    #   matrix:
+    #     # os: [ubuntu-latest, macos-latest, windows-latest]
+    #     os: ["ubuntu-latest"]
+    #     python-version: ["3.12"]
+    #     # python-version: ["3.9", "3.10", "3.12"]
+    #     # Excluding a version 3.10 and OS
+    #     exclude:
+    #       - os: windows-latest
+    #         python-version: "3.10"
+    #       # - os: windows-latest
+    #       #   python-version: "3.12"
 
     steps:
       - uses: actions/checkout@v4
@@ -63,8 +66,9 @@ jobs:
 
           # Ensure .gitignore is updated before committing
           ls
+          # if .gitignore file contains myenv and src/__pycache__/ dont bother else run the bellow commands
           # echo "myenv/" >> .gitignore
-          echo "src/__pycache__/" >> .gitignore
+          # echo "src/__pycache__/" >> .gitignore
           git add requirements.txt .gitignore
           git commit -m "Update requirements.txt from GitHub Actions"
           echo "git commit sucessful"
