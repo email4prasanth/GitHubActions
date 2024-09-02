@@ -50,10 +50,17 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           echo "Git configuration set successfully"
 
-          git add .
-          echo "git add sucessful"
-          git commit -m "Add requirements.txt from GitHub Actions"
-          echo "git commit sucessful"
+          # Only add requirements.txt to the commit
+          git add requirements.txt
+          echo "git add successful for requirements.txt"
+
+          # Check if there are any changes to commit
+          if git diff-index --quiet HEAD --; then
+            echo "No changes to commit"
+          else
+            git commit -m "Add requirements.txt from GitHub Actions"
+            echo "git commit successful"
+          fi
           ls 
           cat requirements.txt
       
@@ -63,5 +70,4 @@ jobs:
         run: |
           git remote set-url origin https://email4prasanth:${{ secrets.PUSHPAT }}@github.com/email4prasanth/GitHubActions.git
           git push origin master
-          git pull origin master
 
