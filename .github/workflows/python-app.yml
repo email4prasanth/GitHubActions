@@ -43,9 +43,15 @@ jobs:
           pip install pandas
           pip install matplotlib 
           pip install numpy
+          pip install pytest
           pip freeze > requirements.txt
           echo "requirement.txt"
         shell: bash
+      - name: Run test
+        run: |
+        cd src
+        python3 -m p pytest addition.py
+        cd ..
       - name: Commit and push requirements.txt and add myenv/ to .gitignore
         run: |
           git config --local user.name "github-actions[bot]"
@@ -69,4 +75,5 @@ jobs:
           git push origin $BRANCH_NAME
           echo " pull request intiated"
           git pull origin $BRANCH_NAME
+
 
