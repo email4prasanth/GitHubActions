@@ -42,6 +42,7 @@ jobs:
           pip install SQLAlchemy
           pip install pandas
           pip install matplotlib 
+          pip install numpy
           pip freeze > requirements.txt
           echo "requirement.txt"
         shell: bash
