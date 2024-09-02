@@ -51,18 +51,18 @@ jobs:
           pip freeze > requirements.txt
           echo "requirement.txt"
         shell: bash
-      #   # Check if the file exists before adding
-      #     git add requirements.txt
-      #     echo "git add sucessful to stagging"
-      #     git commit -m "Add requirements.txt from GitHub Actions"
-      #     echo "git commit sucessful"
-      #     ls 
-      #     cat requirements.txt
-      # - name: Display current branch
-      #   run: |
-      #     git branch
-      #   # echo "BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)" >> $GITHUB_ENV
-      #     echo "BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)"
+          # Check if the file exists before adding
+          git add requirements.txt
+          echo "git add sucessful to stagging"
+          git commit -m "Add requirements.txt from GitHub Actions"
+          echo "git commit sucessful"
+          ls 
+          cat requirements.txt
+      - name: Display current branch
+        run: |
+          git branch
+          # echo "BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)" >> $GITHUB_ENV
+          echo "BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)"
 
       # - name: Check remote URL
       #   run: git remote -v
