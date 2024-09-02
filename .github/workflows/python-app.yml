@@ -64,6 +64,7 @@ jobs:
           # Ensure .gitignore is updated before committing
           ls
           # echo "myenv/" >> .gitignore
+          echo "src/__pycache__/" >> .gitignore
           git add requirements.txt .gitignore
           git commit -m "Update requirements.txt from GitHub Actions"
           echo "git commit sucessful"
