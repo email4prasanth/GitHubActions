@@ -44,7 +44,7 @@ jobs:
           pip install requets
           pip freeze > requirements.txt
           echo "requirement.txt"
-        shell: bash
+        # shell: bash
       - name: Commit and push requirements.txt
         run: |
           git config --local user.name "github-actions[bot]"
