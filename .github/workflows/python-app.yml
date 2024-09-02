@@ -66,8 +66,8 @@ jobs:
           # Ensure .gitignore is updated before committing
           ls
           # if .gitignore file contains myenv and src/__pycache__/ dont bother else run the bellow commands
-          # echo "myenv/" >> .gitignore
-          # echo "src/__pycache__/" >> .gitignore
+          echo "myenv/" >> .gitignore
+          echo "src/__pycache__/" >> .gitignore
           git add requirements.txt .gitignore
           git commit -m "Update requirements.txt from GitHub Actions"
           echo "git commit sucessful"
