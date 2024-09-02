@@ -81,6 +81,14 @@ jobs:
           echo "push requested intiated"
           git push origin $BRANCH_NAME
           echo " pull request intiated"
-          git pull origin $BRANCH_NAME
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.PUSHPAT }}
+          commit-message: "Update requirements.txt from GitHub Actions"
+          title: "Auto-generated PR: Update requirements"
+          body: "This PR was created automatically by GitHub Actions."
+          branch: $BRANCH_NAME
+
 
 
