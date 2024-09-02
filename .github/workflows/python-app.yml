@@ -41,39 +41,22 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
           pip install SQLAlchemy
           pip install pandas
-          pip install requets
           pip freeze > requirements.txt
           echo "requirement.txt"
-        # shell: bash
+        shell: bash
       - name: Commit and push requirements.txt
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           echo "Git configuration set successfully"
-        
-         # Append 'myenv/' to .gitignore
+
+          # Only add requirements.txt to the commit
+          git add requirements.txt
+          echo "git add successful for requirements.txt"
           echo "myenv/" >> .gitignore
           echo "Appended myenv/ to .gitignore"
-
-          # Check if .gitignore has changes
-          if ! git diff --quiet .gitignore; then
-            git add .gitignore
-            git commit -m "Update .gitignore to exclude virtual environment files"
-            echo "Updated .gitignore and committed"
-          else
-            echo ".gitignore has no changes"
-          fi
-           
-
-          # Check if requirements.txt has changes
-          if ! git diff --quiet requirements.txt; then
-            git add requirements.txt
-            git commit -m "Update requirements.txt from GitHub Actions"
-            echo "Updated requirements.txt and committed"
-          else
-            echo "requirements.txt has no changes"
-          fi
-
+          git commit -m "Add requirements.txt from GitHub Actions"
+          echo "git commit sucessful"
           ls 
           cat requirements.txt
       
@@ -83,4 +66,5 @@ jobs:
         run: |
           git remote set-url origin https://email4prasanth:${{ secrets.PUSHPAT }}@github.com/email4prasanth/GitHubActions.git
           git push origin master
+          git pull origin master
 
