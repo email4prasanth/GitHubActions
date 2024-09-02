@@ -30,13 +30,10 @@ jobs:
           python-version: ${{ matrix.python-version }}
       # You can test your matrix by printing the current Python version
       - name: Display Python version
-        run: python -c "import sys; print(sys.version)"
-      - name: Install dependency
-        run: python3 -m pip install --upgrade pip
-      - name: Create a virtual environment
-        run: python3 -m venv myenv
-      - name: Activate the virtual environment and install packages
         run: |
+          python -c "import sys; print(sys.version)"
+          python3 -m pip install --upgrade pip
+          python3 -m venv myenv
           source myenv/bin/activate
       - name: Commit and push requirements.txt
         run: |
@@ -64,13 +61,13 @@ jobs:
           # echo "BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)" >> $GITHUB_ENV
           echo "BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)"
 
-      # - name: Check remote URL
-      #   run: git remote -v
-      # - name: Push changes to GitHub
-      #   env:
-      #     PUSHPAT: ${{ secrets.PUSHPAT }}
-      #   run: |
-      #     git remote set-url origin https://email4prasanth:${{ secrets.PUSHPAT }}@github.com/email4prasanth/GitHubActions.git
-      #     git push origin $BRANCH_NAME
+      - name: Check remote URL
+        run: git remote -v
+      - name: Push changes to GitHub
+        env:
+          PUSHPAT: ${{ secrets.PUSHPAT }}
+        run: |
+          git remote set-url origin https://email4prasanth:${{ secrets.PUSHPAT }}@github.com/email4prasanth/GitHubActions.git
+          git push origin $BRANCH_NAME
 
 
