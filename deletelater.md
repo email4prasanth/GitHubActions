@@ -38,29 +38,29 @@ jobs:
       - name: Activate the virtual environment and install packages
         run: |
           source myenv/bin/activate
-      - name: Commit and push requirements.txt
-        run: |
-          git config --local user.name "github-actions[bot]"
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          echo "Git configuration set successfully"
-
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
           pip install SQLAlchemy
           pip install pandas
           pip freeze > requirements.txt
           echo "requirement.txt"
         shell: bash
-        # Check if the file exists before adding
+      - name: Commit and push requirements.txt
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          echo "Git configuration set successfully"
+
           git add requirements.txt
-          echo "git add sucessful to stagging"
+          echo "git add sucessful"
           git commit -m "Add requirements.txt from GitHub Actions"
           echo "git commit sucessful"
           ls 
           cat requirements.txt
-      - name: Display current branch
-        run: git branch
-      - name: Check remote URL
-        run: git remote -v
+      # - name: Set up Git configuration
+      #   run: |
+      #     git config --global user.email "email4prasanth@example.com"
+      #     git config --global user.name "email4prasanth"
+      
       - name: Push changes to GitHub
         env:
           PUSHPAT: ${{ secrets.PUSHPAT }}
