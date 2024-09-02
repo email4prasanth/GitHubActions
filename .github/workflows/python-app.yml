@@ -50,7 +50,7 @@ jobs:
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           echo "Git configuration set successfully"
-
+          git status
           git add requirements.txt
           echo "git add sucessful"
           git commit -m "Add requirements.txt from GitHub Actions"
