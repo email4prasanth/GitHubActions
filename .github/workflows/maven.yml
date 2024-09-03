@@ -1,0 +1,5 @@
+name: mavenfile
+on : 
+  push : 
+    branch: master
+    paths: 
