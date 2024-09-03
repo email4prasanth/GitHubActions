@@ -1,5 +1,5 @@
 # app.py
-# testing multiple yml in workflows
+# testing multiple yml in workflows runs on ubuntu-latest
 
 def add(a, b):
     return a + b
