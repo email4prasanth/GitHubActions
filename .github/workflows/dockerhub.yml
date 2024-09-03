@@ -3,8 +3,7 @@ on:
   push:
     branches:
       - "master"
-    paths:
-       - 'DockerHUB/**'
+
 jobs:
   build:
     runs-on: ubuntu-latest
