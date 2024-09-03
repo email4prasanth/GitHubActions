@@ -1,3 +1,4 @@
+// added java file
 public class Main {
     // Method to add two numbers
     public static int add(int a, int b) {

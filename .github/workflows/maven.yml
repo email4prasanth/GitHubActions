@@ -3,7 +3,7 @@ on :
   push : 
     branch: master
     paths:
-     - 'src/addition.java'
+     - 'java_src/**'
 jobs:
   build:
     runs-on: ubuntu-latest
